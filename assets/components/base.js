@@ -1,4 +1,8 @@
-// You will use that file to import all your scripts
-// Ex: import gallery from './gallery'
+import $ from 'jquery';
 
-import '../icons/svg-icons.js';
+import '../icons/svg-icons';
+import button from './atoms/button/button';
+
+$(document).ready(() => {
+  button();
+});
