@@ -9,9 +9,13 @@
 
 //
 // atoms:
+@import 'atoms/button/button';
+@import 'atoms/input/input';
 
 //
 // molecules:
+@import 'molecules/search/search';
 
 //
 // organisms:
+@import 'organisms/header/header';
