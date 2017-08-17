@@ -1,0 +1,26 @@
+{
+  "src": "assets/",
+  "dest": "build/",
+  "ghpages": "build/",
+  "images": [
+    "build/images/**/*"
+  ],
+  "svg": [
+    "build/svg/**/*"
+  ],
+  "icons": [
+    "build/icons/**/*"
+  ],
+  "iconsFontName": "icon",
+  "fonts": [
+    "build/fonts/**/*"
+  ],
+  "vendors": {
+    "css": [],
+    "js": []
+  },
+  "singles": [{
+    "src": "",
+    "dest": ""
+  }]
+}

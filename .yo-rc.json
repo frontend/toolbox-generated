@@ -1,0 +1,8 @@
+{
+  "generator-toolbox": {
+    "promptValues": {
+      "src": "assets/",
+      "dest": "build/"
+    }
+  }
+}
