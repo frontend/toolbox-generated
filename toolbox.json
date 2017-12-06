@@ -17,8 +17,13 @@
   ],
   "vendors": {
     "css": [],
-    "js": []
+    "js": [
+      "node_modules/jquery/dist/jquery.min.js"
+    ]
   },
+  "theme": {
+  },
+  "reader_path": "http://localhost/toolbox-env/toolbox-reader/build",
   "singles": [{
     "src": "",
     "dest": ""
