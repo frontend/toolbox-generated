@@ -7,6 +7,6 @@ import button from './atoms/button/button';
 console.log($);
 
 $(document).ready(() => {
-  console.log('ready !');
+  // console.log('ready !');
   button();
 });
