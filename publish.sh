@@ -25,34 +25,35 @@ fi
 # jq --version || { echo "⚠️  You have jq installed on your machine (brew install jq)" ; exit 1; }
 
 # Proceed =====================================================================
-if [ $2 ]
-then
-  echo "update package.json version to $1"
-  # jq -e ".version = \"$1\"" package.json > package.json.tmp && cp package.json.tmp package.json && rm package.json.tmp
-  # cp package.json $DIRECTORY/package.json
-  npm version $1
-fi
+echo "update package.json version to $1"
+npm version $1
 
-# echo "backup content"
-# mkdir "$DIRECTORY-tmp"
-# cp -r $DIRECTORY/* "$DIRECTORY-tmp/"
+# if [ $2 ]
+# then
+#   jq -e ".version = \"$1\"" package.json > package.json.tmp && cp package.json.tmp package.json && rm package.json.tmp
+#   cp package.json $DIRECTORY/package.json
+# fi
 
-# echo "Deleting old buildation"
-# rm -rf $DIRECTORY
-# mkdir $DIRECTORY
-# git worktree prune
-# rm -rf .git/worktrees/$DIRECTORY/
+echo "backup content"
+mkdir "$DIRECTORY-tmp"
+cp -r $DIRECTORY/* "$DIRECTORY-tmp/"
 
-# echo "Checking out $BRANCH branch into build"
-# git worktree add -B $BRANCH $DIRECTORY
+echo "Deleting old buildation"
+rm -rf $DIRECTORY
+mkdir $DIRECTORY
+git worktree prune
+rm -rf .git/worktrees/$DIRECTORY/
 
-# echo "Removing existing files"
-# rm -rf $DIRECTORY/*
+echo "Checking out $BRANCH branch into build"
+git worktree add -B $BRANCH $DIRECTORY
 
-# echo "Generating site"
-# cp -r "$DIRECTORY-tmp"/* $DIRECTORY/
-# rm -rf "$DIRECTORY-tmp"
+echo "Removing existing files"
+rm -rf $DIRECTORY/*
 
-# echo "Updating $BRANCH branch"
-# cd $DIRECTORY && git add --all && git commit -m "Publishing to $BRANCH (publish.sh)"
-# git push --force origin $BRANCH
+echo "Generating site"
+cp -r "$DIRECTORY-tmp"/* $DIRECTORY/
+rm -rf "$DIRECTORY-tmp"
+
+echo "Updating $BRANCH branch"
+cd $DIRECTORY && git add --all && git commit -m "Publishing to $BRANCH (publish.sh)"
+git push --force origin $BRANCH
