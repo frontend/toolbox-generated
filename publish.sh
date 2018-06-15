@@ -22,12 +22,13 @@ then
   npm whoami || { echo "⚠️  You must be logged in to NPM to push a new release" ; exit 1; }
 fi
 
-# jq --version || { echo "⚠️  You have jq installed on your machine (brew install jq)" ; exit 1; }
+jq --version || { echo "⚠️  You have jq installed on your machine (brew install jq)" ; exit 1; }
 
 # Proceed =====================================================================
-echo "update package.json version to $1"
+echo "update package.json version to $1 and write a copy for publishing"
 npm version $1
 cp package.json $DIRECTORY/package.json
+jq -e ".dependencies = {} | .devDependencies = {}" $DIRECTORY/package.json > $DIRECTORY/package.json.tmp && cp $DIRECTORY/package.json.tmp $DIRECTORY/package.json && rm $DIRECTORY/package.json.tmp
 
 echo "backup dist content"
 mkdir "$DIRECTORY-tmp"
