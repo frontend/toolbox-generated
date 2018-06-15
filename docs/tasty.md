@@ -1,5 +1,0 @@
-# hmmm tasty !
-
-Lorem [ipsum dolor sit amet](/#/doc/yo.html), consectetur adipiscing elit. Graece donan, Latine voluptatem vocant. Aliter homines, aliter philosophos loqui putas oportere? Rationis enim perfectio est virtus; Re mihi non aeque satisfacit, et quidem locis pluribus. Nunc haec primum fortasse audientis servire debemus. Duo Reges: constructio interrete. Quem ad modum quis ambulet, sedeat, qui ductus oris, qui vultus in quoque sit? Et harum quidem rerum facilis est et expedita distinctio. 
-
-Item de contrariis, a quibus ad genera formasque generum venerunt. Ergo instituto veterum, quo etiam Stoici utuntur, hinc capiamus exordium. Quamquam tu hanc copiosiorem etiam soles dicere. Earum etiam rerum, quas terra gignit, educatio quaedam et perfectio est non dissimilis animantium. Traditur, inquit, ab Epicuro ratio neglegendi doloris. Amicitiam autem adhibendam esse censent, quia sit ex eo genere, quae prosunt. Non quam nostram quidem, inquit Pomponius iocans; Parvi enim primo ortu sic iacent, tamquam omnino sine animo sint.
