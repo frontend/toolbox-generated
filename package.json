@@ -1,6 +1,6 @@
 {
   "name": "toolbox",
-  "version": "0.0.10",
+  "version": "0.0.8",
   "license": "MIT",
   "main": "index.html",
   "scripts": {
