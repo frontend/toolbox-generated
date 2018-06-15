@@ -29,9 +29,9 @@ echo "update package.json version to $1"
 npm version $1
 cp package.json $DIRECTORY/package.json
 
-# echo "backup dist content"
-# mkdir "$DIRECTORY-tmp"
-# cp -r $DIRECTORY/* "$DIRECTORY-tmp/"
+echo "backup dist content"
+mkdir "$DIRECTORY-tmp"
+cp -r $DIRECTORY/* "$DIRECTORY-tmp/"
 
 # echo "Deleting dist"
 # rm -rf $DIRECTORY
