@@ -11,25 +11,26 @@ then
     exit 1;
 fi
 
-# if [[ $(git status -s) ]]
-# then
-#     echo "⚠️  The working directory is dirty. Please commit any pending changes."
-#     exit 1;
-# fi
+if [[ $(git status -s) ]]
+then
+    echo "⚠️  The working directory is dirty. Please commit any pending changes."
+    exit 1;
+fi
 
 if [ $2 ]
 then
   npm whoami || { echo "⚠️  You must be logged in to NPM to push a new release" ; exit 1; }
 fi
 
-jq --version || { echo "⚠️  You have jq installed on your machine (brew install jq)" ; exit 1; }
+# jq --version || { echo "⚠️  You have jq installed on your machine (brew install jq)" ; exit 1; }
 
 # Proceed =====================================================================
 if [ $2 ]
 then
   echo "update package.json version to $1"
-  jq -e ".version = \"$1\"" package.json > package.json.tmp && cp package.json.tmp package.json && rm package.json.tmp
-  cp package.json $DIRECTORY/package.json
+  # jq -e ".version = \"$1\"" package.json > package.json.tmp && cp package.json.tmp package.json && rm package.json.tmp
+  # cp package.json $DIRECTORY/package.json
+  npm version $1
 fi
 
 # echo "backup content"
