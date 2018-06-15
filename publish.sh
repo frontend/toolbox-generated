@@ -33,28 +33,28 @@ echo "backup dist content"
 mkdir "$DIRECTORY-tmp"
 cp -r $DIRECTORY/* "$DIRECTORY-tmp/"
 
-# echo "Deleting dist"
-# rm -rf $DIRECTORY
-# mkdir $DIRECTORY
-# git worktree prune
-# rm -rf .git/worktrees/$DIRECTORY/
+echo "Deleting dist"
+rm -rf $DIRECTORY
+mkdir $DIRECTORY
+git worktree prune
+rm -rf .git/worktrees/$DIRECTORY/
 
-# echo "Checking out $BRANCH branch into dist"
-# git worktree add -B $BRANCH $DIRECTORY
+echo "Checking out $BRANCH branch into dist"
+git worktree add -B $BRANCH $DIRECTORY
 
-# echo "Removing existing files"
-# rm -rf $DIRECTORY/*
+echo "Removing existing files"
+rm -rf $DIRECTORY/*
 
-# echo "Generating dist using the backup"
-# cp -r "$DIRECTORY-tmp"/* $DIRECTORY/
-# rm -rf "$DIRECTORY-tmp"
+echo "Generating dist using the backup"
+cp -r "$DIRECTORY-tmp"/* $DIRECTORY/
+rm -rf "$DIRECTORY-tmp"
 
-# echo "Updating $BRANCH branch"
-# if [ $2 ]
-# then
-#   cd $DIRECTORY && git add --all && git commit -m "Publishing to $BRANCH (publish.sh)"
-#   git push --force origin $BRANCH && npm publish
-# else
-#   cd $DIRECTORY && git add --all && git commit -m "Publishing to $BRANCH (publish.sh)"
-#   git push --force origin $BRANCH
-# fi
+echo "Updating $BRANCH branch"
+if [ $2 ]
+then
+  cd $DIRECTORY && git add --all && git commit -m "Publishing to $BRANCH (publish.sh)"
+  git push --force origin $BRANCH && npm publish
+else
+  cd $DIRECTORY && git add --all && git commit -m "Publishing to $BRANCH (publish.sh)"
+  git push --force origin $BRANCH
+fi
