@@ -1,6 +1,6 @@
 #!/bin/sh
 
-DIRECTORY="build/"
+DIRECTORY="build"
 BRANCH="dist/frontend"
 CURRENT_BRANCH=$(git branch | sed -n -e 's/^\* \(.*\)/\1/p')
 
