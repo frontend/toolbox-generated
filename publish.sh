@@ -53,8 +53,8 @@ echo "Updating $BRANCH branch"
 if [ $2 ]
 then
   cd $DIRECTORY && git add --all && git commit -m "Publishing to $BRANCH (publish.sh)"
-  git push --force origin $BRANCH && npm publish
+  git push --force origin $BRANCH --tags && npm publish
 else
   cd $DIRECTORY && git add --all && git commit -m "Publishing to $BRANCH (publish.sh)"
-  git push --force origin $BRANCH
+  git push --force origin $BRANCH --tags
 fi
