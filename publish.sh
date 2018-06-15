@@ -25,6 +25,9 @@ fi
 jq --version || { echo "⚠️  You have jq installed on your machine (brew install jq)" ; exit 1; }
 
 # Proceed =====================================================================
+echo "rebuild frontend assets"
+yarn build
+
 echo "update package.json version to $1 and write a copy for publishing"
 npm version $1
 cp package.json $DIRECTORY/package.json
